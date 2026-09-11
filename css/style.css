@@ -103,22 +103,6 @@ h1, h2, h3, h4 {
 .bg-mint    { background: linear-gradient(160deg, #F2F7EA 0%, #E7F0DA 100%); }
 
 /* Titres de section ---------------------------------------------------- */
-.eyebrow {
-  font-family: 'Caveat', cursive;
-  font-size: clamp(1.5rem, 3vw, 2.1rem);
-  color: var(--yellow-dark);
-  text-align: center;
-  margin: 0 0 4px;
-  display: block;
-}
-.eyebrow::before, .eyebrow::after {
-  content: '✿';
-  font-size: .55em;
-  color: var(--coral);
-  margin-inline: 14px;
-  vertical-align: middle;
-}
-
 .section-title {
   font-size: clamp(1.9rem, 4.4vw, 2.9rem);
   text-align: center;
@@ -243,11 +227,11 @@ h1, h2, h3, h4 {
   font-weight: 600;
 }
 
-.main-nav { display: flex; align-items: center; gap: 22px; }
+.main-nav { display: flex; align-items: center; gap: 26px; }
 .main-nav a {
   font-family: 'Baloo 2', sans-serif;
   font-weight: 500;
-  font-size: .8rem;
+  font-size: .85rem;
   letter-spacing: 1px;
   text-transform: uppercase;
   color: var(--text-soft);
@@ -518,12 +502,6 @@ h1, h2, h3, h4 {
   font-size: clamp(1.7rem, 3.6vw, 2.5rem);
   color: var(--coral-dark);
   margin: 0 0 6px;
-}
-.split-body .h2-sub {
-  font-family: 'Caveat', cursive;
-  font-size: 1.5rem;
-  color: var(--yellow-dark);
-  margin: 0 0 20px;
 }
 .split-body p { margin: 0 0 15px; }
 
@@ -840,13 +818,6 @@ h1, h2, h3, h4 {
   margin: 0 0 8px;
   position: relative; z-index: 2;
 }
-.cta-band .sub {
-  font-family: 'Caveat', cursive;
-  font-size: 1.5rem;
-  color: var(--yellow-dark);
-  margin: 0 0 26px;
-  position: relative; z-index: 2;
-}
 .cta-band .btn-row { position: relative; z-index: 2; }
 .cta-band .tel {
   display: block;
@@ -964,13 +935,13 @@ h1, h2, h3, h4 {
    21. RESPONSIVE
    ========================================================================== */
 @media (max-width: 1080px) {
-  .main-nav { gap: 15px; }
-  .main-nav a { font-size: .74rem; }
+  .main-nav { gap: 18px; }
+  .main-nav a { font-size: .78rem; }
   .timeline { grid-template-columns: repeat(3, 1fr); row-gap: 28px; }
 }
 
-@media (max-width: 940px) {
-  .main-nav, .header-btn { display: none; }
+@media (max-width: 900px) {
+  .main-nav { display: none; }
   .burger { display: block; }
 
   .hero-grid { grid-template-columns: 1fr; gap: 42px; text-align: center; }

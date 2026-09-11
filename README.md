@@ -28,10 +28,8 @@ python3 -m http.server 8000   # → http://localhost:8000
 ```
 .
 ├── index.html                  # Accueil
-├── la-creche.html              # Présentation de la structure, espaces, infos pratiques
+├── a-propos.html               # La crèche, les espaces, la directrice, l'équipe, la journée type
 ├── pedagogie.html              # Valeurs, inspirations, adaptation
-├── equipe.html                 # Direction et équipe
-├── vie-a-la-creche.html        # Journée type, activités, lien avec les familles
 ├── tarifs.html                 # Forfaits, aides CAF, FAQ (JSON-LD FAQPage)
 ├── contact.html                # Coordonnées, carte, étapes d'inscription
 ├── les-ptits-nuages.html       # La seconde micro-crèche (même adresse, même équipe)
@@ -62,8 +60,8 @@ Ces valeurs sont **provisoires** et doivent être confirmées par le client.
 | Adresse | `60 rue Saint-Jean, 65000 Tarbes` | toutes les pages, JSON-LD, `llms.txt` |
 | Coordonnées GPS | `43.2327 / 0.0799` (centre de Tarbes) | JSON-LD des pages Accueil et Contact |
 | Lien de pré-inscription | plateforme du réseau (`mcdespyrenees.jdmapps.fr`) | `js/main.js`, constante `PREINSCRIPTION_URL` |
-| Capacité | « micro-crèche de 12 places » | `la-creche.html` |
-| Directrice | texte générique, sans prénom | `equipe.html` |
+| Capacité | « micro-crèche de 12 places » | `a-propos.html` |
+| Directrice | texte générique, sans prénom | `a-propos.html` |
 | Mentions légales | `[RAISON_SOCIALE]`, `[FORME_JURIDIQUE]`, `[ADRESSE_SIEGE]`, `[SIRET]`, `[NUMERO_TVA]`, `[DIRECTEUR_DE_PUBLICATION]`, `[CREDITS_PHOTOS]` | `mentions-legales.html` |
 | Facebook | absent (seul Instagram est présent) | footer, `contact.html` |
 
@@ -80,6 +78,14 @@ une icône de repli tant qu'ils sont absents :
 - `pedagogie.jpg` — un atelier ou un temps d'activité (paysage)
 - `directrice.jpg` — portrait de la directrice (carré, ~600×600 px)
 - `vie-1.jpg` … `vie-8.jpg` — galerie « La vie à la crèche » (carrés, ~800×800 px)
+
+## 🧭 Navigation
+
+Menu à cinq entrées, aligné sur celui du Jardin des Merveilles :
+**Accueil · À propos · Pédagogie · Tarifs · Contact / Préinscription**.
+
+`les-ptits-nuages.html`, `mentions-legales.html` et `blog/` ne figurent pas dans le menu
+principal : on y accède depuis le footer et depuis la section « Notre petite famille ».
 
 ## 🎨 Charte graphique
 
@@ -98,7 +104,7 @@ Source : `assets/images/charte-graphique.png`.
 ## 🔗 Interconnexion des sites du réseau
 
 - Ce site pointe vers **Le Jardin des Merveilles** (`https://www.micro-creche-borderes.fr/`) depuis
-  la section « Notre petite famille » de l'accueil et depuis le footer.
+  la section « Notre petite famille » (accueil et page contact), logo à l'appui, et depuis le footer.
 - Réciproquement, le site de Bordères doit pointer vers `https://www.micro-creche-tarbes.fr/`
   (aujourd'hui : `bientot-disponible.html` sur la carte « Tarbes » et dans son footer).
 

@@ -18,12 +18,10 @@
 ## Pages principales
 
 - [Accueil](https://www.micro-creche-tarbes.fr/) : présentation de la micro-crèche, valeurs, journée type.
-- [La crèche](https://www.micro-creche-tarbes.fr/la-creche.html) : les espaces, la capacité d'accueil, les informations pratiques.
-- [Notre pédagogie](https://www.micro-creche-tarbes.fr/pedagogie.html) : bienveillance, éveil, autonomie, motricité libre, adaptation.
-- [L'équipe](https://www.micro-creche-tarbes.fr/equipe.html) : la direction et les professionnelles diplômées de la petite enfance.
-- [La vie à la crèche](https://www.micro-creche-tarbes.fr/vie-a-la-creche.html) : journée type, activités, repas, sieste, lien avec les familles.
-- [Tarifs et aides](https://www.micro-creche-tarbes.fr/tarifs.html) : forfaits de 1 à 5 jours, CMG de la CAF, crédit d'impôt, participation employeur.
-- [Contact et pré-inscription](https://www.micro-creche-tarbes.fr/contact.html) : coordonnées, accès, étapes d'inscription.
+- [À propos](https://www.micro-creche-tarbes.fr/a-propos.html) : la structure, les espaces, la capacité d'accueil, la directrice, l'équipe et la journée type.
+- [Pédagogie](https://www.micro-creche-tarbes.fr/pedagogie.html) : bienveillance, éveil, autonomie, motricité libre, adaptation.
+- [Tarifs](https://www.micro-creche-tarbes.fr/tarifs.html) : forfaits de 1 à 5 jours, CMG de la CAF, crédit d'impôt, participation employeur.
+- [Contact et préinscription](https://www.micro-creche-tarbes.fr/contact.html) : coordonnées, accès, étapes d'inscription.
 - [Les P'tits Nuages](https://www.micro-creche-tarbes.fr/les-ptits-nuages.html) : la seconde micro-crèche, à la même adresse.
 
 ## Blog

@@ -18,8 +18,7 @@ Chaque article est une page HTML autonome.
 /robots.txt                           → ne change plus (crawlers SEO + IA déjà autorisés)
 ```
 
-**URL canonique du site : `https://www.micro-creche-tarbes.fr/`** (avec `www`, avec `https`, telle
-que définie dans le `CNAME`). Toutes les URL absolues des balises `canonical`, Open Graph, JSON-LD,
+**URL canonique du site : `https://www.micro-creche-tarbes.fr/`** (avec `www`, avec `https`). Toutes les URL absolues des balises `canonical`, Open Graph, JSON-LD,
 sitemap et RSS doivent utiliser cette forme exacte.
 
 **Slugs** : minuscules, tirets, sans accent, avec un ancrage local quand c'est pertinent.
@@ -53,7 +52,7 @@ Dupliquer `/blog/micro-creche-ou-assistante-maternelle-tarbes/index.html` dans
 Ajouter une carte `.post-card` **en haut** de la grille (ordre antéchronologique) :
 
 ```html
-<a href="/blog/<slug>/" class="post-card">
+<a href="<slug>/" class="post-card">
   <span class="post-tag">Catégorie</span>
   <h3>Titre de l'article</h3>
   <div class="post-meta"><time datetime="AAAA-MM-JJ">JJ mois AAAA</time> · Lecture X min</div>
@@ -76,8 +75,8 @@ Ajouter une carte `.post-card` **en haut** de la grille (ordre antéchronologiqu
 - [ ] `meta description` < 155 caractères
 - [ ] Un seul `<h1>` par page, hiérarchie H2 / H3 respectée
 - [ ] Les trois blocs JSON-LD passent le [Rich Results Test](https://search.google.com/test/rich-results)
-- [ ] Les liens internes du blog sont **racine-absolus** (`/index.html`, `/contact.html`), jamais
-      relatifs — le blog est dans un sous-dossier
+- [ ] Les liens internes du blog sont **relatifs au dossier de l'article** (`../../index.html`, `../../contact.html`)
+      — le blog est dans un sous-dossier et le site n'utilise aucun chemin absolu
 - [ ] Le NAP est identique partout : *Les P'tits Soleils · 60 rue Saint-Jean, 65000 Tarbes · 07 00 00 00 00*
 - [ ] Rendu mobile vérifié
 - [ ] Après mise en ligne : soumettre l'URL dans la Google Search Console
