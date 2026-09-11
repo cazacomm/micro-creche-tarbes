@@ -808,6 +808,52 @@ h1, h2, h3, h4 {
 .info-list a { text-decoration: none; }
 .info-list a:hover .v { color: var(--coral-dark); }
 
+/* Tranches d'aides CAF ---------------------------------------------------- */
+.tranches {
+  max-width: 620px;
+  margin-inline: auto;
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 32px 34px;
+  box-shadow: var(--shadow-sm);
+}
+.tranches-intro {
+  text-align: center;
+  color: var(--text-soft);
+  margin: 0 0 20px;
+}
+.tranches ul { list-style: none; margin: 0; padding: 0; }
+.tranches li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: var(--green-light);
+  border-radius: 14px;
+  padding: 13px 20px;
+  margin-bottom: 10px;
+}
+.tranches li:last-child { margin-bottom: 0; }
+.tranches .k {
+  font-family: 'Baloo 2', sans-serif;
+  font-weight: 600;
+  color: var(--brown);
+}
+.tranches .v {
+  font-family: 'Baloo 2', sans-serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--green-dark);
+  white-space: nowrap;
+}
+.tranches-note {
+  margin: 20px 0 0;
+  font-size: .85rem;
+  color: var(--text-soft);
+  text-align: center;
+  line-height: 1.6;
+}
+
 /* Encadré doux ----------------------------------------------------------- */
 .note {
   background: var(--yellow-light);

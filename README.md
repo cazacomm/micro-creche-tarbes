@@ -35,7 +35,7 @@ python3 -m http.server 8000   # → http://localhost:8000
 ├── index.html                  # Accueil
 ├── a-propos.html               # La crèche, les espaces, la directrice, l'équipe, la journée type
 ├── pedagogie.html              # Valeurs, inspirations, adaptation
-├── tarifs.html                 # Forfaits, aides CAF, FAQ (JSON-LD FAQPage)
+├── tarifs.html                 # Forfaits, aides CAF (tranches), CTA préinscription
 ├── contact.html                # Coordonnées, carte, étapes d'inscription
 ├── les-ptits-nuages.html       # La seconde micro-crèche (même adresse, même équipe)
 ├── bientot-disponible.html     # Placeholder pour les micro-crèches d'Ibos
@@ -71,6 +71,10 @@ Ces valeurs sont **provisoires** et doivent être confirmées par le client.
 | Mentions légales | `[RAISON_SOCIALE]`, `[FORME_JURIDIQUE]`, `[ADRESSE_SIEGE]`, `[SIRET]`, `[NUMERO_TVA]`, `[DIRECTEUR_DE_PUBLICATION]`, `[CREDITS_PHOTOS]` | `mentions-legales.html` |
 | Facebook | absent (seul Instagram est présent) | footer, `contact.html` |
 | **Avis de parents** | **3 cartes vides, encadrées en pointillés** | `index.html`, section « Avis de nos parents » |
+| Montants CMG | `967 € / 834 € / 700 €`, repris du site de Bordères | `tarifs.html` |
+
+> ⚠️ Les montants d'aide CAF (tranches 1 à 3) sont repris tels quels du site du Jardin des
+> Merveilles. À vérifier une fois par an : les barèmes CMG sont réévalués.
 
 > ⚠️ La section « Avis de nos parents » contient trois emplacements vides. Il faut y coller de
 > **vrais avis** (fiche Google de la crèche) avant toute mise en ligne, ou supprimer la section.
