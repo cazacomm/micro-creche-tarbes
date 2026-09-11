@@ -350,7 +350,16 @@ h1, h2, h3, h4 {
   padding: 11px 20px;
 }
 .mobile-menu a:hover { color: var(--coral-dark); }
-.mobile-menu .btn { margin-top: 18px; }
+.mobile-menu .btn {
+  margin-top: 18px;
+  max-width: 270px;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+  font-size: .8rem;
+  padding: 14px 18px;
+  line-height: 1.35;
+}
 .mobile-menu .close {
   position: absolute;
   top: 22px; right: 24px;
@@ -887,6 +896,8 @@ h1, h2, h3, h4 {
 .testimonial .who { font-family: 'Baloo 2', sans-serif; font-weight: 600; color: var(--brown); }
 .testimonial .src { font-size: .8rem; color: var(--text-soft); }
 
+.avis-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+
 /* ==========================================================================
    15. RÉSEAU / AUTRES CRÈCHES
    ========================================================================== */
@@ -1097,7 +1108,7 @@ h1, h2, h3, h4 {
   .split.reverse .split-visual { order: 0; }
 
   .values-grid, .univers-grid, .card-grid-4 { grid-template-columns: repeat(2, 1fr); }
-  .card-grid-3, .card-grid-5, .steps { grid-template-columns: repeat(2, 1fr); row-gap: 30px; }
+  .card-grid-3, .card-grid-5, .steps, .avis-grid { grid-template-columns: repeat(2, 1fr); row-gap: 30px; }
   .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
   .gallery { grid-template-columns: repeat(3, 1fr); }
   .network-grid { grid-template-columns: 1fr; }
@@ -1107,7 +1118,33 @@ h1, h2, h3, h4 {
   body { font-size: 16px; }
   .section { padding-block: 58px; }
   .values-grid, .univers-grid, .card-grid-2, .card-grid-3,
-  .card-grid-4, .card-grid-5, .steps { grid-template-columns: 1fr; }
+  .card-grid-4, .card-grid-5, .steps, .avis-grid { grid-template-columns: 1fr; }
+
+  /* Grilles « m2 » : deux widgets par ligne plutôt qu'un seul en pleine largeur.
+     Si le nombre d'éléments est impair, le dernier est centré sur sa propre ligne. */
+  .m2 { grid-template-columns: repeat(2, 1fr) !important; gap: 12px; row-gap: 14px; }
+  .m2 > :last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc(50% - 6px);
+  }
+
+  /* Contenu resserré pour tenir dans une demi-largeur */
+  .m2 .feature { padding: 22px 14px; }
+  .m2 .feature .ic { width: 46px; height: 46px; font-size: 1.15rem; margin-bottom: 10px; }
+  .m2 .feature h3 { font-size: .97rem; margin-bottom: 6px; }
+  .m2 .feature p  { font-size: .82rem; line-height: 1.5; }
+  .m2 .feature .btn-sm { padding: 8px 13px; font-size: .7rem; }
+
+  .m2 .univers-card { padding: 30px 12px 24px; }
+  .m2 .univers-card .ic { font-size: 2rem; margin-bottom: 10px; }
+  .m2 .univers-card h3 { font-size: .84rem; letter-spacing: .8px; }
+  .m2 .univers-card .card-cta { font-size: .76rem; margin-top: 10px; }
+
+  .m2 .value-card { padding: 28px 12px 22px; }
+  .m2 .value-card .ic { font-size: 1.9rem; margin-bottom: 8px; }
+  .m2 .value-card h3 { font-size: .86rem; letter-spacing: .8px; }
+  .m2 .value-card p  { font-size: .79rem; line-height: 1.45; }
   .timeline { grid-template-columns: repeat(2, 1fr); }
   .gallery { grid-template-columns: repeat(2, 1fr); }
   .footer-grid { grid-template-columns: 1fr; }
