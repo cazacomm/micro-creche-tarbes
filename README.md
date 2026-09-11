@@ -109,7 +109,7 @@ Source : `assets/images/charte-graphique.png`.
 2. **Une fois le domaine acheté** : créer un fichier `CNAME` à la racine contenant
    `www.micro-creche-tarbes.fr`, puis le renseigner dans **Settings → Pages → Custom domain**
    et cocher *Enforce HTTPS*
-4. Chez le registrar, créer un enregistrement `CNAME` :
+3. Chez le registrar, créer un enregistrement `CNAME` :
    `www` → `cazacomm.github.io`
    et pour le domaine apex, quatre enregistrements `A` vers
    `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
