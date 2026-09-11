@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog — Micro-crèche Les P'tits Soleils</title>
+    <link>https://www.micro-creche-tarbes.fr/blog/</link>
+    <description>Conseils petite enfance, éveil et quotidien des tout-petits à la micro-crèche Les P'tits Soleils à Tarbes.</description>
+    <language>fr-FR</language>
+    <lastBuildDate>Fri, 11 Sep 2026 09:00:00 +0200</lastBuildDate>
+    <atom:link href="https://www.micro-creche-tarbes.fr/rss.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>Micro-crèche ou assistante maternelle à Tarbes : comment choisir ?</title>
+      <link>https://www.micro-creche-tarbes.fr/blog/micro-creche-ou-assistante-maternelle-tarbes/</link>
+      <guid isPermaLink="true">https://www.micro-creche-tarbes.fr/blog/micro-creche-ou-assistante-maternelle-tarbes/</guid>
+      <pubDate>Fri, 11 Sep 2026 09:00:00 +0200</pubDate>
+      <category>Mode de garde</category>
+      <description>Collectif ou domicile, horaires, coût réel, continuité de l'accueil : les vraies différences entre les deux modes de garde, et les questions à se poser avant de trancher.</description>
+    </item>
+
+  </channel>
+</rss>
