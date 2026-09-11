@@ -4,7 +4,10 @@ Site vitrine statique de la **micro-crèche Les P'tits Soleils**, 60 rue Saint-J
 La structure exploite également la micro-crèche **Les P'tits Nuages** à la même adresse : le
 branding mis en avant est toujours *Les P'tits Soleils*.
 
-Nom de domaine cible : **www.micro-creche-tarbes.fr** (déjà déclaré dans le `CNAME`).
+Nom de domaine cible : **www.micro-creche-tarbes.fr** — pas encore acheté.
+Le fichier `CNAME` sera à créer au moment du branchement du domaine (voir « Déploiement »).
+En attendant, tous les chemins du site sont **relatifs**, ce qui permet une relecture sur
+`https://cazacomm.github.io/micro-creche-tarbes/`.
 
 ## ✨ Stack
 
@@ -44,7 +47,7 @@ python3 -m http.server 8000   # → http://localhost:8000
 ├── .github/workflows/          # Publication auto du blog (lundi matin)
 ├── blog-config.json            # Faits et paramètres du blog
 ├── BLOG_WORKFLOW.md            # Procédure éditoriale
-├── sitemap.xml · rss.xml · llms.txt · robots.txt · CNAME
+├── sitemap.xml · rss.xml · llms.txt · robots.txt
 └── favicon* · apple-touch-icon.png · android-chrome-*.png · site.webmanifest
 ```
 
@@ -101,9 +104,11 @@ Source : `assets/images/charte-graphique.png`.
 
 ## 🚀 Déploiement GitHub Pages
 
-1. Push sur la branche `main`
-2. **Settings → Pages** : source `main` / `/ (root)`
-3. Renseigner le domaine personnalisé `www.micro-creche-tarbes.fr` et cocher *Enforce HTTPS*
+1. Push sur la branche `main` — GitHub Pages est déjà activé (source `main` / `/ (root)`).
+   Aperçu : <https://cazacomm.github.io/micro-creche-tarbes/>
+2. **Une fois le domaine acheté** : créer un fichier `CNAME` à la racine contenant
+   `www.micro-creche-tarbes.fr`, puis le renseigner dans **Settings → Pages → Custom domain**
+   et cocher *Enforce HTTPS*
 4. Chez le registrar, créer un enregistrement `CNAME` :
    `www` → `cazacomm.github.io`
    et pour le domaine apex, quatre enregistrements `A` vers
