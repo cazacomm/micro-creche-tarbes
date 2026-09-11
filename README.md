@@ -15,7 +15,12 @@ En attendant, tous les chemins du site sont **relatifs**, ce qui permet une rele
 - CSS custom (`css/style.css`), charte pastel « soleil »
 - [Font Awesome 6.4](https://fontawesome.com/) via CDN
 - Google Fonts : **Baloo 2** (titres) + **Nunito** (corps) + **Caveat** (accents manuscrits)
-- JavaScript vanilla (menu mobile, apparition au scroll, injection du lien de pré-inscription)
+- JavaScript vanilla (menu mobile, apparition au scroll, injection du lien de préinscription)
+
+Le bouton **« Accéder aux préinscriptions »** (classe `.btn-mega`) est animé en permanence, sans
+interaction : dégradé qui défile, léger battement, halo qui se propage et éclat qui balaie la
+surface. Les animations se désactivent automatiquement si le visiteur a demandé une réduction
+des animations dans son système (`prefers-reduced-motion`).
 
 Hébergement : **GitHub Pages**. Le site fonctionne aussi en local :
 
@@ -33,6 +38,7 @@ python3 -m http.server 8000   # → http://localhost:8000
 ├── tarifs.html                 # Forfaits, aides CAF, FAQ (JSON-LD FAQPage)
 ├── contact.html                # Coordonnées, carte, étapes d'inscription
 ├── les-ptits-nuages.html       # La seconde micro-crèche (même adresse, même équipe)
+├── bientot-disponible.html     # Placeholder pour les micro-crèches d'Ibos
 ├── mentions-legales.html       # Mentions légales / RGPD
 ├── blog/
 │   ├── index.html              # Liste des articles
@@ -64,6 +70,11 @@ Ces valeurs sont **provisoires** et doivent être confirmées par le client.
 | Directrice | texte générique, sans prénom | `a-propos.html` |
 | Mentions légales | `[RAISON_SOCIALE]`, `[FORME_JURIDIQUE]`, `[ADRESSE_SIEGE]`, `[SIRET]`, `[NUMERO_TVA]`, `[DIRECTEUR_DE_PUBLICATION]`, `[CREDITS_PHOTOS]` | `mentions-legales.html` |
 | Facebook | absent (seul Instagram est présent) | footer, `contact.html` |
+| **Avis de parents** | **3 cartes vides, encadrées en pointillés** | `index.html`, section « Avis de nos parents » |
+
+> ⚠️ La section « Avis de nos parents » contient trois emplacements vides. Il faut y coller de
+> **vrais avis** (fiche Google de la crèche) avant toute mise en ligne, ou supprimer la section.
+> Elle est volontairement grisée et encadrée en pointillés pour qu'on ne l'oublie pas.
 
 > **Le lien de pré-inscription est centralisé** : une seule constante `PREINSCRIPTION_URL` en haut
 > de `js/main.js` alimente tous les boutons `data-link="preinscription"` du site.
@@ -84,8 +95,12 @@ une icône de repli tant qu'ils sont absents :
 Menu à cinq entrées, aligné sur celui du Jardin des Merveilles :
 **Accueil · À propos · Pédagogie · Tarifs · Contact / Préinscription**.
 
-`les-ptits-nuages.html`, `mentions-legales.html` et `blog/` ne figurent pas dans le menu
-principal : on y accède depuis le footer et depuis la section « Notre petite famille ».
+`les-ptits-nuages.html`, `bientot-disponible.html`, `mentions-legales.html` et `blog/` ne figurent
+pas dans le menu principal : on y accède depuis le footer et depuis la section
+« Notre petite famille ».
+
+**Accueil** — quatre sections seulement : hero, « Découvrez notre univers » (les quatre pages),
+« Notre petite famille » (Bordères + Ibos), « Avis de nos parents », « La vie à la crèche ».
 
 ## 🎨 Charte graphique
 

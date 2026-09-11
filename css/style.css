@@ -160,22 +160,92 @@ h1, h2, h3, h4 {
 }
 .btn-outline:hover { border-color: var(--coral); box-shadow: var(--shadow); }
 
-.btn-yellow {
-  background: linear-gradient(135deg, var(--yellow) 0%, #F5CE72 100%);
-  color: #7A5310;
-  box-shadow: 0 6px 18px rgba(217, 160, 33, .30);
-}
-.btn-yellow:hover { box-shadow: 0 12px 26px rgba(217, 160, 33, .40); }
-
 .btn-lg { padding: 17px 38px; font-size: 1rem; }
 .btn-sm { padding: 10px 20px; font-size: .82rem; }
 
-/* Bouton de pré-inscription : pulsation douce */
-.btn-pulse { animation: soft-pulse 2.8s ease-in-out infinite; }
-@keyframes soft-pulse {
-  0%, 100% { box-shadow: 0 6px 18px rgba(217, 113, 63, .32); }
-  50%      { box-shadow: 0 6px 26px rgba(217, 113, 63, .52); }
+/* --------------------------------------------------------------------------
+   Bouton de préinscription : il doit se voir, en permanence et sur tout écran.
+   Trois animations superposées, toutes sans interaction :
+     · le dégradé défile           (mega-flow)
+     · le bouton respire           (mega-beat)
+     · un halo se propage          (mega-halo, pseudo-élément ::after)
+     · un éclat balaie la surface  (mega-shine, pseudo-élément ::before)
+   -------------------------------------------------------------------------- */
+.btn-mega {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: .8px;
+  background: linear-gradient(100deg,
+              #E9704B 0%, #F0904F 22%, #F7C948 44%,
+              #F0904F 66%, #E9704B 88%, #F0904F 100%);
+  background-size: 300% 100%;
+  box-shadow: 0 8px 22px rgba(217, 113, 63, .42);
+  animation: mega-flow 6s linear infinite,
+             mega-beat 2.2s ease-in-out infinite;
 }
+
+/* Halo qui se propage en continu */
+.btn-mega::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 2px solid var(--coral);
+  animation: mega-halo 2.2s ease-out infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Éclat qui balaie le bouton */
+.btn-mega::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 45%;
+  height: 100%;
+  background: linear-gradient(100deg,
+              rgba(255,255,255,0) 0%,
+              rgba(255,255,255,.55) 50%,
+              rgba(255,255,255,0) 100%);
+  transform: skewX(-22deg);
+  animation: mega-shine 3.4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.btn-mega:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 14px 32px rgba(217, 113, 63, .55);
+}
+
+.btn-mega i { animation: mega-nudge 2.2s ease-in-out infinite; }
+
+@keyframes mega-flow {
+  0%   { background-position:   0% 50%; }
+  100% { background-position: 300% 50%; }
+}
+@keyframes mega-beat {
+  0%, 100%   { transform: scale(1); }
+  45%        { transform: scale(1.045); }
+  60%        { transform: scale(.995); }
+}
+@keyframes mega-halo {
+  0%   { opacity: .85; transform: scale(1); }
+  100% { opacity: 0;   transform: scale(1.22); }
+}
+@keyframes mega-shine {
+  0%, 62%  { left: -60%; }
+  100%     { left: 130%; }
+}
+@keyframes mega-nudge {
+  0%, 100% { transform: rotate(0deg); }
+  40%      { transform: rotate(-12deg) scale(1.15); }
+  55%      { transform: rotate(8deg) scale(1.1); }
+}
+
 
 .btn-row {
   display: flex;
@@ -515,8 +585,8 @@ h1, h2, h3, h4 {
 }
 .univers-card {
   display: block;
-  border-radius: var(--radius);
-  padding: 32px 24px;
+  border-radius: 50% 50% 46% 46% / 34% 34% 12% 12%;
+  padding: 40px 24px 34px;
   text-align: center;
   text-decoration: none;
   color: inherit;
@@ -529,7 +599,7 @@ h1, h2, h3, h4 {
 .univers-card.u-peach  { background: var(--coral-light); }
 .univers-card.u-blue   { background: var(--blue-light); }
 
-.univers-card .ic { font-size: 2.5rem; margin-bottom: 14px; line-height: 1; }
+.univers-card .ic { font-size: 2.6rem; margin-bottom: 14px; line-height: 1; }
 .univers-card h3 {
   font-size: 1.02rem;
   letter-spacing: 1.3px;
@@ -762,6 +832,12 @@ h1, h2, h3, h4 {
 }
 .testimonial .stars { color: var(--yellow); letter-spacing: 3px; margin-bottom: 12px; }
 .testimonial .quote { font-style: italic; color: var(--text); flex-grow: 1; margin: 0 0 16px; font-size: .96rem; }
+/* Avis encore vides : visuellement identifiables, pour ne jamais être publiés tels quels */
+.testimonial .quote.is-placeholder { color: #B9AFA2; }
+.testimonial:has(.is-placeholder) { outline: 2px dashed #E8D5B8; outline-offset: -2px; }
+.testimonial:has(.is-placeholder) .who,
+.testimonial:has(.is-placeholder) .src { color: #C4B7A6; }
+.testimonial:has(.is-placeholder) .stars { opacity: .4; }
 .testimonial .who { font-family: 'Baloo 2', sans-serif; font-weight: 600; color: var(--brown); }
 .testimonial .src { font-size: .8rem; color: var(--text-soft); }
 
@@ -788,6 +864,28 @@ h1, h2, h3, h4 {
 .network-card .card-cta { font-family: 'Baloo 2', sans-serif; font-weight: 600; font-size: .85rem; color: var(--blue-dark); }
 .network-card .card-cta i { margin-left: 5px; transition: transform .25s ease; }
 .network-card:hover .card-cta i { transform: translateX(5px); }
+
+.network-card .tag {
+  display: inline-block;
+  margin-top: 8px;
+  background: var(--yellow-light);
+  color: var(--yellow-dark);
+  font-family: 'Baloo 2', sans-serif;
+  font-weight: 600;
+  font-size: .74rem;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+  padding: 4px 14px;
+  border-radius: 999px;
+}
+.network-card .ic-round {
+  width: 82px; height: 82px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  background: var(--green-light);
+}
+.network-card .ic-round svg { width: 54px; height: 54px; }
 
 /* Bandeau « Les P'tits Nuages » ------------------------------------------ */
 .sister {
