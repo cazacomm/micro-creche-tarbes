@@ -887,16 +887,56 @@ h1, h2, h3, h4 {
 }
 .testimonial .stars { color: var(--yellow); letter-spacing: 3px; margin-bottom: 12px; }
 .testimonial .quote { font-style: italic; color: var(--text); flex-grow: 1; margin: 0 0 16px; font-size: .96rem; }
-/* Avis encore vides : visuellement identifiables, pour ne jamais être publiés tels quels */
-.testimonial .quote.is-placeholder { color: #B9AFA2; }
-.testimonial:has(.is-placeholder) { outline: 2px dashed #E8D5B8; outline-offset: -2px; }
-.testimonial:has(.is-placeholder) .who,
-.testimonial:has(.is-placeholder) .src { color: #C4B7A6; }
-.testimonial:has(.is-placeholder) .stars { opacity: .4; }
 .testimonial .who { font-family: 'Baloo 2', sans-serif; font-weight: 600; color: var(--brown); }
 .testimonial .src { font-size: .8rem; color: var(--text-soft); }
 
-.avis-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+/* Carrousel d'avis : défilement lent et continu, à l'arrêt au survol ou au doigt ---- */
+.avis-marquee {
+  overflow: hidden;
+  position: relative;
+  padding-block: 6px;
+  /* Les bords s'estompent pour suggérer la continuité */
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 7%, #000 93%, transparent 100%);
+          mask-image: linear-gradient(90deg, transparent 0, #000 7%, #000 93%, transparent 100%);
+}
+.avis-track {
+  display: flex;
+  gap: 22px;
+  width: max-content;
+  animation: avis-defile 72s linear infinite;
+}
+.avis-marquee:hover .avis-track,
+.avis-marquee:focus-within .avis-track,
+.avis-marquee.paused .avis-track { animation-play-state: paused; }
+
+.avis-marquee .testimonial {
+  flex: 0 0 340px;
+  width: 340px;
+  margin: 0;
+}
+.avis-marquee .testimonial .quote {
+  margin: 0 0 16px;
+  quotes: '« ' ' »';
+}
+.avis-marquee .testimonial .quote::before { content: open-quote; }
+.avis-marquee .testimonial .quote::after  { content: close-quote; }
+.avis-marquee .testimonial figcaption { margin-top: auto; }
+.avis-marquee .testimonial .who { display: block; }
+.avis-marquee .testimonial .src { display: block; }
+.avis-marquee .testimonial .src i { margin-right: 5px; }
+
+/* La piste contient deux fois la même série : un demi-tour boucle exactement */
+@keyframes avis-defile {
+  from { transform: translateX(0); }
+  to   { transform: translateX(calc(-50% - 11px)); }
+}
+
+.avis-hint {
+  text-align: center;
+  font-size: .84rem;
+  color: var(--text-soft);
+  margin: 22px 0 0;
+}
 
 /* ==========================================================================
    15. RÉSEAU / AUTRES CRÈCHES
@@ -1084,6 +1124,12 @@ h1, h2, h3, h4 {
     transition: none !important;
   }
   .reveal { opacity: 1; transform: none; }
+
+  /* Sans animation, les avis restent consultables en faisant défiler à la main */
+  .avis-marquee { overflow-x: auto; -webkit-mask-image: none; mask-image: none; }
+  .avis-track { width: auto; }
+  .avis-track > [aria-hidden="true"] { display: none; }
+  .avis-hint { display: none; }
 }
 
 /* ==========================================================================
@@ -1108,7 +1154,7 @@ h1, h2, h3, h4 {
   .split.reverse .split-visual { order: 0; }
 
   .values-grid, .univers-grid, .card-grid-4 { grid-template-columns: repeat(2, 1fr); }
-  .card-grid-3, .card-grid-5, .steps, .avis-grid { grid-template-columns: repeat(2, 1fr); row-gap: 30px; }
+  .card-grid-3, .card-grid-5, .steps { grid-template-columns: repeat(2, 1fr); row-gap: 30px; }
   .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
   .gallery { grid-template-columns: repeat(3, 1fr); }
   .network-grid { grid-template-columns: 1fr; }
@@ -1118,7 +1164,7 @@ h1, h2, h3, h4 {
   body { font-size: 16px; }
   .section { padding-block: 58px; }
   .values-grid, .univers-grid, .card-grid-2, .card-grid-3,
-  .card-grid-4, .card-grid-5, .steps, .avis-grid { grid-template-columns: 1fr; }
+  .card-grid-4, .card-grid-5, .steps { grid-template-columns: 1fr; }
 
   /* Grilles « m2 » : deux widgets par ligne plutôt qu'un seul en pleine largeur.
      Si le nombre d'éléments est impair, le dernier est centré sur sa propre ligne. */
@@ -1155,5 +1201,11 @@ h1, h2, h3, h4 {
   .brand img { width: 46px; height: 46px; }
   .hero-logo-badge { width: 82px; height: 82px; }
   .map-frame iframe { height: 340px; }
+  .avis-marquee .testimonial { flex-basis: 80vw; width: 80vw; }
+  .avis-track { animation-duration: 58s; gap: 16px; }
+  @keyframes avis-defile {
+    from { transform: translateX(0); }
+    to   { transform: translateX(calc(-50% - 8px)); }
+  }
   .btn { font-size: .85rem; padding: 13px 22px; }
 }

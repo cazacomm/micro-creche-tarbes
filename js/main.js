@@ -70,6 +70,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  /* ---------- Carrousel d'avis : arrêt au doigt ----------
+     Le survol souris est géré en CSS (:hover). Sur écran tactile il n'y a pas
+     de survol : on met le défilement en pause tant que le doigt est posé. */
+  const marquee = document.getElementById('avis-marquee');
+  if (marquee) {
+    const pause  = () => marquee.classList.add('paused');
+    const reprend = () => marquee.classList.remove('paused');
+    marquee.addEventListener('touchstart', pause,   { passive: true });
+    marquee.addEventListener('touchend',   reprend, { passive: true });
+    marquee.addEventListener('touchcancel', reprend, { passive: true });
+    // Un pointeur stylet ou une souris qui sort de la zone relance aussi le défilement
+    marquee.addEventListener('pointerdown', pause);
+    marquee.addEventListener('pointerup', reprend);
+    marquee.addEventListener('pointerleave', reprend);
+  }
+
   /* ---------- Décalage des animations flottantes ---------- */
   document.querySelectorAll('.float-y, .float-x').forEach((el, i) => {
     el.style.animationDelay = `${(i % 5) * 0.45}s`;

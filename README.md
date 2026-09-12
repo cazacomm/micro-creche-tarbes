@@ -63,7 +63,6 @@ crèche le 12/09/2026. Il reste :
 | Élément | État | Où |
 |---|---|---|
 | Lien de préinscription | **provisoire** : pointe vers la plateforme de Bordères | `js/main.js`, constante `PREINSCRIPTION_URL` |
-| Avis de parents | **3 cartes vides, encadrées en pointillés** | `index.html`, section « Avis de nos parents » |
 | Mentions légales | `[RAISON_SOCIALE]`, `[FORME_JURIDIQUE]`, `[ADRESSE_SIEGE]`, `[SIRET]`, `[NUMERO_TVA]`, `[DIRECTEUR_DE_PUBLICATION]`, `[CREDITS_PHOTOS]` | `mentions-legales.html` |
 | Photos | aucune fournie, icônes de repli affichées | `assets/images/` |
 | Coordonnées GPS | `43.2327 / 0.0799` (centre de Tarbes, pas l'adresse exacte) | JSON-LD accueil et contact |
@@ -71,9 +70,13 @@ crèche le 12/09/2026. Il reste :
 
 > ⚠️ Les barèmes CMG sont réévalués chaque année : à vérifier sur les deux sites du réseau.
 
-> ⚠️ La section « Avis de nos parents » contient trois emplacements vides. Il faut y coller de
-> **vrais avis** (fiche Google de la crèche) avant toute mise en ligne, ou supprimer la section.
-> Elle est volontairement grisée et encadrée en pointillés pour qu'on ne l'oublie pas.
+> ⚠️ **Avis de parents** : les six avis du carrousel sont de vrais avis Google, mais ils
+> proviennent de la fiche d'une **autre crèche du réseau** (Micro-crèche des Pyrénées, Ibos) —
+> la capture source le montre, et l'un d'eux remercie « Maïlys la directrice », qui n'est pas
+> la directrice des P'tits Soleils. Le libellé de la section l'indique explicitement :
+> *« Les avis Google des familles accueillies dans les micro-crèches des Pyrénées »*.
+> Dès que Les P'tits Soleils aura ses propres avis, les remplacer et retitrer la section.
+> Captures d'origine : `assets/sources/avis/`.
 
 > ✅ **Réseaux sociaux** : la crèche n'a **pas de page Facebook**. Un seul compte Instagram
 > (`@microcreches.despyrenees`) couvre toutes les crèches du réseau — c'est le même que celui du
