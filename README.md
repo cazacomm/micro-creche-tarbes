@@ -70,6 +70,11 @@ crèche le 12/09/2026. Il reste :
 
 > ⚠️ Les barèmes CMG sont réévalués chaque année : à vérifier sur les deux sites du réseau.
 
+> ⚠️ **Visuels provisoires** : `accueil-hero.jpg` et `espace-de-vie.jpg` sont découpés dans la
+> maquette de charte graphique, agrandis et accentués. Ce ne sont **pas des photos de la crèche
+> réelle** : la source ne fait que 729 px de large, donc le rendu reste doux au zoom. À remplacer
+> par de vraies photos dès réception. Script d'extraction documenté dans l'historique Git.
+
 > ⚠️ **Avis de parents** : les six avis du carrousel sont de vrais avis Google, mais ils
 > proviennent de la fiche d'une **autre crèche du réseau** (Micro-crèche des Pyrénées, Ibos) —
 > la capture source le montre, et l'un d'eux remercie « Maïlys la directrice », qui n'est pas
@@ -101,8 +106,8 @@ crèche le 12/09/2026. Il reste :
 À déposer dans `assets/images/` — les pages pointent déjà vers ces noms de fichiers et affichent
 une icône de repli tant qu'ils sont absents :
 
-- `accueil-hero.jpg` — visuel principal de la page d'accueil (carré, ~1000×1000 px)
-- `espace-de-vie.jpg` — vue d'ensemble de la crèche (paysage, ~1200×900 px)
+- ~~`accueil-hero.jpg`~~ — **provisoirement extrait de la maquette** (`assets/sources/chartegraph.PNG`)
+- ~~`espace-de-vie.jpg`~~ — **provisoirement extrait de la maquette**
 - `salle-de-jeux.jpg` — la grande salle de jeux (paysage, ~1200×900 px)
 - `pedagogie.jpg` — un atelier ou un temps d'activité (paysage)
 - `directrice.jpg` — portrait de Loane (carré, ~600×600 px)
