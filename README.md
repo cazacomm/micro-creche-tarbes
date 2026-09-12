@@ -70,6 +70,11 @@ crèche le 12/09/2026. Il reste :
 
 > ⚠️ Les barèmes CMG sont réévalués chaque année : à vérifier sur les deux sites du réseau.
 
+> ℹ️ **Suffixe `?v=2`** sur `accueil-hero.jpg` et `espace-de-vie.jpg` : ces deux fichiers ont
+> existé quelques heures, les navigateurs les ont mis en cache et continuaient de les afficher
+> après leur suppression. Le suffixe force une nouvelle requête. Au moment de déposer les vraies
+> photos, incrémenter le numéro (`?v=3`) plutôt que de le retirer.
+
 > ℹ️ **Pas de visuel de substitution** : extraire les photos de la maquette de charte graphique a
 > été essayé puis abandonné — la source ne fait que 729 px de large, le rendu agrandi était trop
 > dégradé. Les blocs affichent donc un repli (icône ou « Photo de la crèche à venir ») jusqu'à
