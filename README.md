@@ -55,32 +55,34 @@ python3 -m http.server 8000   # → http://localhost:8000
 └── favicon* · apple-touch-icon.png · android-chrome-*.png · site.webmanifest
 ```
 
-## ⚠️ Placeholders à remplacer avant mise en ligne
+## ⚠️ Reste à compléter avant mise en ligne
 
-Ces valeurs sont **provisoires** et doivent être confirmées par le client.
+Les coordonnées, les textes de présentation et la bio de la directrice ont été fournis par la
+crèche le 12/09/2026. Il reste :
 
-| Élément | Valeur actuelle | Où |
+| Élément | État | Où |
 |---|---|---|
-| Téléphone | `07 00 00 00 00` | toutes les pages, `llms.txt`, `blog-config.json` |
-| E-mail | `contact@micro-creche-tarbes.fr` | toutes les pages, `llms.txt`, `blog-config.json` |
-| Adresse | `60 rue Saint-Jean, 65000 Tarbes` | toutes les pages, JSON-LD, `llms.txt` |
-| Coordonnées GPS | `43.2327 / 0.0799` (centre de Tarbes) | JSON-LD des pages Accueil et Contact |
-| Lien de pré-inscription | plateforme du réseau (`mcdespyrenees.jdmapps.fr`) | `js/main.js`, constante `PREINSCRIPTION_URL` |
-| Capacité | « micro-crèche de 12 places » | `a-propos.html` |
-| Directrice | texte générique, sans prénom | `a-propos.html` |
+| Lien de préinscription | **provisoire** : pointe vers la plateforme de Bordères | `js/main.js`, constante `PREINSCRIPTION_URL` |
+| Avis de parents | **3 cartes vides, encadrées en pointillés** | `index.html`, section « Avis de nos parents » |
 | Mentions légales | `[RAISON_SOCIALE]`, `[FORME_JURIDIQUE]`, `[ADRESSE_SIEGE]`, `[SIRET]`, `[NUMERO_TVA]`, `[DIRECTEUR_DE_PUBLICATION]`, `[CREDITS_PHOTOS]` | `mentions-legales.html` |
+| Photos | aucune fournie, icônes de repli affichées | `assets/images/` |
 | Facebook | absent (seul Instagram est présent) | footer, `contact.html` |
-| **Avis de parents** | **3 cartes vides, encadrées en pointillés** | `index.html`, section « Avis de nos parents » |
+| Mention « quartier de l'Arsenal » | déduite du nom du projet, **non confirmée** par la crèche | plusieurs pages + JSON-LD |
+| Coordonnées GPS | `43.2327 / 0.0799` (centre de Tarbes, pas l'adresse exacte) | JSON-LD accueil et contact |
+| Nombre de places | `12` retenu, d'après le texte de la directrice. Sa réponse « 12 places pour les 2 crèches » reste ambiguë (12 au total, ou 12 chacune ?) | `a-propos.html`, `llms.txt`, `blog-config.json` |
 | Montants CMG | `967 € / 834 € / 700 €`, repris du site de Bordères | `tarifs.html` |
 
-> ⚠️ Les montants d'aide CAF (tranches 1 à 3) sont repris tels quels du site du Jardin des
-> Merveilles. À vérifier une fois par an : les barèmes CMG sont réévalués.
+> ⚠️ Les barèmes CMG sont réévalués chaque année : à vérifier sur les deux sites du réseau.
 
 > ⚠️ La section « Avis de nos parents » contient trois emplacements vides. Il faut y coller de
 > **vrais avis** (fiche Google de la crèche) avant toute mise en ligne, ou supprimer la section.
 > Elle est volontairement grisée et encadrée en pointillés pour qu'on ne l'oublie pas.
 
-> **Le lien de pré-inscription est centralisé** : une seule constante `PREINSCRIPTION_URL` en haut
+> ⚠️ **Les P'tits Nuages a sa propre équipe.** Le site ne doit jamais laisser entendre que les
+> deux crèches partagent leur équipe ou leur direction. Ce qui est commun : l'adresse, le
+> téléphone, l'e-mail, les horaires et l'état d'esprit.
+
+> **Le lien de préinscription est centralisé** : une seule constante `PREINSCRIPTION_URL` en haut
 > de `js/main.js` alimente tous les boutons `data-link="preinscription"` du site.
 
 ## 📸 Photos à fournir
@@ -89,9 +91,10 @@ Ces valeurs sont **provisoires** et doivent être confirmées par le client.
 une icône de repli tant qu'ils sont absents :
 
 - `accueil-hero.jpg` — visuel principal de la page d'accueil (carré, ~1000×1000 px)
-- `espace-de-vie.jpg` — l'espace de vie (paysage, ~1200×900 px)
+- `espace-de-vie.jpg` — vue d'ensemble de la crèche (paysage, ~1200×900 px)
+- `salle-de-jeux.jpg` — la grande salle de jeux (paysage, ~1200×900 px)
 - `pedagogie.jpg` — un atelier ou un temps d'activité (paysage)
-- `directrice.jpg` — portrait de la directrice (carré, ~600×600 px)
+- `directrice.jpg` — portrait de Loane (carré, ~600×600 px)
 - `vie-1.jpg` … `vie-8.jpg` — galerie « La vie à la crèche » (carrés, ~800×800 px)
 
 ## 🧭 Navigation

@@ -77,7 +77,7 @@ Ajouter une carte `.post-card` **en haut** de la grille (ordre antéchronologiqu
 - [ ] Les trois blocs JSON-LD passent le [Rich Results Test](https://search.google.com/test/rich-results)
 - [ ] Les liens internes du blog sont **relatifs au dossier de l'article** (`../../index.html`, `../../contact.html`)
       — le blog est dans un sous-dossier et le site n'utilise aucun chemin absolu
-- [ ] Le NAP est identique partout : *Les P'tits Soleils · 60 rue Saint-Jean, 65000 Tarbes · 07 00 00 00 00*
+- [ ] Le NAP est identique partout : *Les P'tits Soleils · 60 rue Saint-Jean, 65000 Tarbes · 06 31 00 68 71*
 - [ ] Rendu mobile vérifié
 - [ ] Après mise en ligne : soumettre l'URL dans la Google Search Console
 
