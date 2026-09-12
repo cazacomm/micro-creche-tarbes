@@ -66,10 +66,7 @@ crèche le 12/09/2026. Il reste :
 | Avis de parents | **3 cartes vides, encadrées en pointillés** | `index.html`, section « Avis de nos parents » |
 | Mentions légales | `[RAISON_SOCIALE]`, `[FORME_JURIDIQUE]`, `[ADRESSE_SIEGE]`, `[SIRET]`, `[NUMERO_TVA]`, `[DIRECTEUR_DE_PUBLICATION]`, `[CREDITS_PHOTOS]` | `mentions-legales.html` |
 | Photos | aucune fournie, icônes de repli affichées | `assets/images/` |
-| Facebook | absent (seul Instagram est présent) | footer, `contact.html` |
-| Mention « quartier de l'Arsenal » | déduite du nom du projet, **non confirmée** par la crèche | plusieurs pages + JSON-LD |
 | Coordonnées GPS | `43.2327 / 0.0799` (centre de Tarbes, pas l'adresse exacte) | JSON-LD accueil et contact |
-| Nombre de places | `12` retenu, d'après le texte de la directrice. Sa réponse « 12 places pour les 2 crèches » reste ambiguë (12 au total, ou 12 chacune ?) | `a-propos.html`, `llms.txt`, `blog-config.json` |
 | Montants CMG | `967 € / 834 € / 700 €`, repris du site de Bordères | `tarifs.html` |
 
 > ⚠️ Les barèmes CMG sont réévalués chaque année : à vérifier sur les deux sites du réseau.
@@ -77,6 +74,17 @@ crèche le 12/09/2026. Il reste :
 > ⚠️ La section « Avis de nos parents » contient trois emplacements vides. Il faut y coller de
 > **vrais avis** (fiche Google de la crèche) avant toute mise en ligne, ou supprimer la section.
 > Elle est volontairement grisée et encadrée en pointillés pour qu'on ne l'oublie pas.
+
+> ✅ **Réseaux sociaux** : la crèche n'a **pas de page Facebook**. Un seul compte Instagram
+> (`@microcreches.despyrenees`) couvre toutes les crèches du réseau — c'est le même que celui du
+> Jardin des Merveilles. Ne pas ajouter d'autre lien social.
+
+> ✅ **Capacité** : **12 places par micro-crèche** — 12 pour Les P'tits Soleils, 12 pour Les
+> P'tits Nuages. Ne jamais additionner les deux ni écrire « 24 places » : l'argument à faire
+> passer, c'est le petit groupe, pas le total.
+
+> ✅ **Quartier de l'Arsenal** confirmé par le client : à mentionner explicitement avec Tarbes.
+> Adresse définitive : 60 rue Saint-Jean, 65000 Tarbes.
 
 > ⚠️ **Les P'tits Nuages a sa propre équipe.** Le site ne doit jamais laisser entendre que les
 > deux crèches partagent leur équipe ou leur direction. Ce qui est commun : l'adresse, le
