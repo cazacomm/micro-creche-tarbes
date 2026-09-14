@@ -5,3 +5,7 @@ __pycache__/
 .env
 .venv/
 node_modules/
+
+# Documents administratifs : jamais publiés
+Kbis*
+*.kbis

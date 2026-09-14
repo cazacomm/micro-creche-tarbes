@@ -916,10 +916,16 @@ h1, h2, h3, h4 {
 }
 .avis-marquee .testimonial .quote {
   margin: 0 0 16px;
-  quotes: '« ' ' »';
+  /* Les avis n'ont pas tous la même longueur : on tronque visuellement au-delà
+     de neuf lignes pour que toutes les cartes gardent la même hauteur. Le texte
+     intégral reste dans le code, donc lisible par les moteurs et les lecteurs
+     d'écran. */
+  display: -webkit-box;
+  -webkit-line-clamp: 9;
+  -webkit-box-orient: vertical;
+  line-clamp: 9;
+  overflow: hidden;
 }
-.avis-marquee .testimonial .quote::before { content: open-quote; }
-.avis-marquee .testimonial .quote::after  { content: close-quote; }
 .avis-marquee .testimonial figcaption { margin-top: auto; }
 .avis-marquee .testimonial .who { display: block; }
 .avis-marquee .testimonial .src { display: block; }

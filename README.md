@@ -63,7 +63,7 @@ crèche le 12/09/2026. Il reste :
 | Élément | État | Où |
 |---|---|---|
 | Lien de préinscription | **provisoire** : pointe vers la plateforme de Bordères | `js/main.js`, constante `PREINSCRIPTION_URL` |
-| Mentions légales | `[RAISON_SOCIALE]`, `[FORME_JURIDIQUE]`, `[ADRESSE_SIEGE]`, `[SIRET]`, `[NUMERO_TVA]`, `[DIRECTEUR_DE_PUBLICATION]`, `[CREDITS_PHOTOS]` | `mentions-legales.html` |
+| Mentions légales | `[RAISON_SOCIALE]`, `[FORME_JURIDIQUE]`, `[ADRESSE_SIEGE]`, `[SIRET]`, `[NUMERO_TVA]`, `[DIRECTEUR_DE_PUBLICATION]`, `[CREDITS_PHOTOS]` — **le Kbis reçu est celui de SARL BORDERES, pas de la société qui exploite Les P'tits Soleils** | `mentions-legales.html` |
 | Photos | aucune fournie, icônes de repli affichées | `assets/images/` |
 | Coordonnées GPS | `43.2327 / 0.0799` (centre de Tarbes, pas l'adresse exacte) | JSON-LD accueil et contact |
 | Montants CMG | `967 € / 834 € / 700 €`, repris du site de Bordères | `tarifs.html` |
@@ -79,6 +79,10 @@ crèche le 12/09/2026. Il reste :
 > été essayé puis abandonné — la source ne fait que 729 px de large, le rendu agrandi était trop
 > dégradé. Les blocs affichent donc un repli (icône ou « Photo de la crèche à venir ») jusqu'à
 > réception des vraies photos.
+
+> 🔒 **Documents administratifs** : ne jamais déposer de Kbis ou de pièce d'identité dans
+> `assets/` — ce dossier est publié tel quel sur GitHub Pages. Le `.gitignore` bloque les fichiers
+> `Kbis*` par sécurité. Les originaux vivent hors du dépôt.
 
 > ⚠️ **Avis de parents** : les six avis du carrousel sont de vrais avis Google, mais ils
 > proviennent de la fiche d'une **autre crèche du réseau** (Micro-crèche des Pyrénées, Ibos) —
@@ -115,7 +119,7 @@ une icône de repli tant qu'ils sont absents :
 - `espace-de-vie.jpg` — vue d'ensemble de la crèche (paysage, ~1200×900 px)
 - `salle-de-jeux.jpg` — la grande salle de jeux (paysage, ~1200×900 px)
 - `pedagogie.jpg` — un atelier ou un temps d'activité (paysage)
-- `directrice.jpg` — portrait de Loane (carré, ~600×600 px)
+- ~~`directrice.jpg`~~ — ✅ fourni (portrait de Loane, recadré en carré 800×800)
 - `vie-1.jpg` … `vie-8.jpg` — galerie « La vie à la crèche » (carrés, ~800×800 px)
 
 ## 🧭 Navigation
