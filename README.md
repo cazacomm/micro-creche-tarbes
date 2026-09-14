@@ -63,7 +63,7 @@ crèche le 12/09/2026. Il reste :
 | Élément | État | Où |
 |---|---|---|
 | Lien de préinscription | **provisoire** : pointe vers la plateforme de Bordères | `js/main.js`, constante `PREINSCRIPTION_URL` |
-| Mentions légales | `[RAISON_SOCIALE]`, `[FORME_JURIDIQUE]`, `[ADRESSE_SIEGE]`, `[SIRET]`, `[NUMERO_TVA]`, `[DIRECTEUR_DE_PUBLICATION]`, `[CREDITS_PHOTOS]` — **le Kbis reçu est celui de SARL BORDERES, pas de la société qui exploite Les P'tits Soleils** | `mentions-legales.html` |
+| Mentions légales | ✅ complétées d'après l'extrait Kbis du 28/07/2026. Reste à vérifier : **numéro de TVA intracommunautaire** (absent du Kbis, la ligne a été retirée) | `mentions-legales.html` |
 | Photos | aucune fournie, icônes de repli affichées | `assets/images/` |
 | Coordonnées GPS | `43.2327 / 0.0799` (centre de Tarbes, pas l'adresse exacte) | JSON-LD accueil et contact |
 | Montants CMG | `967 € / 834 € / 700 €`, repris du site de Bordères | `tarifs.html` |
@@ -79,6 +79,14 @@ crèche le 12/09/2026. Il reste :
 > été essayé puis abandonné — la source ne fait que 729 px de large, le rendu agrandi était trop
 > dégradé. Les blocs affichent donc un repli (icône ou « Photo de la crèche à venir ») jusqu'à
 > réception des vraies photos.
+
+> ℹ️ **Éditeur** : SARL BORDERES (SIREN 108 003 849, RCS Tarbes), siège 6 rue du Colombard à
+> Bordères-sur-l'Échez. C'est la même société pour les trois micro-crèches du groupe. Le SIRET
+> n'apparaît pas sur le Kbis : seul le SIREN est affiché, ce qui satisfait l'obligation légale.
+
+> 🎨 **Galerie sans photos** : les huit tuiles affichent une icône sur un fond pastel, une teinte
+> différente par tuile (`:nth-child(8n+k)`). L'ensemble se lit comme un motif voulu tant que les
+> vraies photos ne sont pas là. Déposer `vie-1.jpg` … `vie-8.jpg` suffit à les remplacer.
 
 > 🔒 **Documents administratifs** : ne jamais déposer de Kbis ou de pièce d'identité dans
 > `assets/` — ce dossier est publié tel quel sur GitHub Pages. Le `.gitignore` bloque les fichiers

@@ -737,8 +737,28 @@ h1, h2, h3, h4 {
 .gallery-item .frame .fallback {
   position: absolute; inset: 0;
   display: flex; align-items: center; justify-content: center;
-  font-size: 2rem; color: var(--coral-dark);
+  font-size: 2.4rem;
+  opacity: .55;
 }
+
+/* En attendant les photos, chaque tuile prend une teinte pastel différente :
+   la galerie se lit comme un motif voulu, pas comme des images manquantes. */
+.gallery-item:nth-child(8n+1) .frame { background: linear-gradient(150deg, #FDF0C8, #FCE4C0); }
+.gallery-item:nth-child(8n+1) .fallback { color: var(--yellow-dark); }
+.gallery-item:nth-child(8n+2) .frame { background: linear-gradient(150deg, #FBE4DE, #F8D6CE); }
+.gallery-item:nth-child(8n+2) .fallback { color: var(--pink-dark); }
+.gallery-item:nth-child(8n+3) .frame { background: linear-gradient(150deg, #E6F0D8, #D9E8C6); }
+.gallery-item:nth-child(8n+3) .fallback { color: var(--green-dark); }
+.gallery-item:nth-child(8n+4) .frame { background: linear-gradient(150deg, #DDEEF4, #CBE4EE); }
+.gallery-item:nth-child(8n+4) .fallback { color: var(--blue-dark); }
+.gallery-item:nth-child(8n+5) .frame { background: linear-gradient(150deg, #FBE1D5, #F7CFBE); }
+.gallery-item:nth-child(8n+5) .fallback { color: var(--coral-dark); }
+.gallery-item:nth-child(8n+6) .frame { background: linear-gradient(150deg, #DDEEF4, #E2EDD3); }
+.gallery-item:nth-child(8n+6) .fallback { color: var(--blue-dark); }
+.gallery-item:nth-child(8n+7) .frame { background: linear-gradient(150deg, #EDE6F3, #E3DAEE); }
+.gallery-item:nth-child(8n+7) .fallback { color: #8A6FB0; }
+.gallery-item:nth-child(8n+8) .frame { background: linear-gradient(150deg, #FDF0C8, #F8E0CE); }
+.gallery-item:nth-child(8n+8) .fallback { color: var(--coral-dark); }
 .gallery-item .label {
   display: block;
   margin-top: 10px;
