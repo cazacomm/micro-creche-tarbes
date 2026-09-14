@@ -84,9 +84,8 @@ crèche le 12/09/2026. Il reste :
 > Bordères-sur-l'Échez. C'est la même société pour les trois micro-crèches du groupe. Le SIRET
 > n'apparaît pas sur le Kbis : seul le SIREN est affiché, ce qui satisfait l'obligation légale.
 
-> 🎨 **Galerie sans photos** : les huit tuiles affichent une icône sur un fond pastel, une teinte
-> différente par tuile (`:nth-child(8n+k)`). L'ensemble se lit comme un motif voulu tant que les
-> vraies photos ne sont pas là. Déposer `vie-1.jpg` … `vie-8.jpg` suffit à les remplacer.
+> 🎨 **Repli pastel** : les blocs sans photo affichent une icône sur un fond pastel, une teinte
+> différente par tuile (`:nth-child(8n+k)`). Il ne reste que les trois visuels du lieu réel.
 
 > 🔒 **Documents administratifs** : ne jamais déposer de Kbis ou de pièce d'identité dans
 > `assets/` — ce dossier est publié tel quel sur GitHub Pages. Le `.gitignore` bloque les fichiers
@@ -123,12 +122,21 @@ crèche le 12/09/2026. Il reste :
 À déposer dans `assets/images/` — les pages pointent déjà vers ces noms de fichiers et affichent
 une icône de repli tant qu'ils sont absents :
 
+Restent à fournir — **photos réelles du lieu**, à faire une fois les travaux terminés :
+
 - `accueil-hero.jpg` — visuel principal de la page d'accueil (carré, ~1000×1000 px)
 - `espace-de-vie.jpg` — vue d'ensemble de la crèche (paysage, ~1200×900 px)
 - `salle-de-jeux.jpg` — la grande salle de jeux (paysage, ~1200×900 px)
-- `pedagogie.jpg` — un atelier ou un temps d'activité (paysage)
-- ~~`directrice.jpg`~~ — ✅ fourni (portrait de Loane, recadré en carré 800×800)
-- `vie-1.jpg` … `vie-8.jpg` — galerie « La vie à la crèche » (carrés, ~800×800 px)
+
+Déjà en place :
+
+- ✅ `directrice.jpg` — portrait de Loane, recadré en carré 800×800
+- ✅ `vie-1.jpg` … `vie-8.jpg` — galerie « La vie à la crèche », 800×800
+- ✅ `pedagogie.jpg` — visuel de la page Pédagogie, 1200×900
+
+Les dix images d'illustration proviennent de banques d'images libres de droits, fournies par le
+client. Les originaux sont dans `assets/sources/photos/`. **Aucune ne montre de visage d'enfant
+reconnaissable** : les cadrages ont été choisis ou resserrés pour l'éviter.
 
 ## 🧭 Navigation
 
