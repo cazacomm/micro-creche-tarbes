@@ -783,6 +783,19 @@ h1, h2, h3, h4 {
 .card-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 .card-grid-5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
 
+/* Grille des projets : cinq cartes. En flex plutôt qu'en grille, pour que la
+   dernière ligne incomplète reste centrée au lieu d'être ferrée à gauche. */
+.projets-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 22px;
+}
+.projets-grid > * {
+  flex: 0 1 calc(33.333% - 15px);
+  min-width: 240px;
+}
+
 .feature {
   background: #fff;
   border-radius: var(--radius);
@@ -1237,6 +1250,13 @@ h1, h2, h3, h4 {
   .m2 .value-card .ic { font-size: 1.9rem; margin-bottom: 8px; }
   .m2 .value-card h3 { font-size: .86rem; letter-spacing: .8px; }
   .m2 .value-card p  { font-size: .79rem; line-height: 1.45; }
+
+  .projets-grid { gap: 12px; }
+  .projets-grid > * { flex-basis: calc(50% - 6px); min-width: 0; }
+  .projets-grid .feature { padding: 22px 14px; }
+  .projets-grid .feature .ic { width: 46px; height: 46px; font-size: 1.15rem; margin-bottom: 10px; }
+  .projets-grid .feature h3 { font-size: .97rem; margin-bottom: 6px; }
+  .projets-grid .feature p  { font-size: .82rem; line-height: 1.5; }
   .timeline { grid-template-columns: repeat(2, 1fr); }
   .gallery { grid-template-columns: repeat(2, 1fr); }
   .footer-grid { grid-template-columns: 1fr; }
