@@ -133,7 +133,6 @@ Déjà en place :
 - ✅ `directrice.jpg` — portrait de Loane, recadré en carré 800×800
 - ✅ `logo-pyrenees-ibos.png` — logo de la Micro-crèche Pyrénées, détouré en rond 500×500
 - ✅ `vie-1.jpg` … `vie-8.jpg` — galerie « La vie à la crèche », 800×800
-- ✅ `pedagogie.jpg` — visuel de la page Pédagogie, 1200×900
 
 Les dix images d'illustration proviennent de banques d'images libres de droits, fournies par le
 client. Les originaux sont dans `assets/sources/photos/`. **Aucune ne montre de visage d'enfant

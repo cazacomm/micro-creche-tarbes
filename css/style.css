@@ -414,7 +414,12 @@ h1, h2, h3, h4 {
 }
 
 /* Visuel de droite : forme organique + arc-en-ciel */
-.hero-visual { position: relative; }
+.hero-visual {
+  position: relative;
+  width: 82%;
+  max-width: 400px;
+  margin-inline: auto;
+}
 .hero-blob {
   position: relative;
   aspect-ratio: 1 / 1;
@@ -451,8 +456,8 @@ h1, h2, h3, h4 {
 
 .hero-logo-badge {
   position: absolute;
-  bottom: -14px; left: -16px;
-  width: 108px; height: 108px;
+  bottom: -10px; left: -12px;
+  width: 92px; height: 92px;
   border-radius: 50%;
   box-shadow: var(--shadow);
   background: #fff;
@@ -571,6 +576,25 @@ h1, h2, h3, h4 {
   position: relative;
 }
 .split-visual .blob img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Variante logo : le visuel n'est pas une photo à recadrer mais une marque à
+   présenter en entier, sur un fond clair et dans une forme ronde. */
+.split-visual .blob.blob-logo {
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  max-width: 400px;
+  margin-inline: auto;
+  background: linear-gradient(150deg, var(--yellow-light), var(--coral-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7%;
+}
+.split-visual .blob.blob-logo img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
 .split-visual .blob .blob-fallback {
   position: absolute; inset: 0;
   display: flex; align-items: center; justify-content: center;
@@ -1199,7 +1223,7 @@ h1, h2, h3, h4 {
   .hero-grid { grid-template-columns: 1fr; gap: 42px; text-align: center; }
   .hero-text { margin-inline: auto; }
   .hero .btn-row { justify-content: center; }
-  .hero-visual { max-width: 440px; margin-inline: auto; width: 100%; }
+  .hero-visual { max-width: 340px; margin-inline: auto; width: 100%; }
 
   .split { grid-template-columns: 1fr; gap: 34px; }
   .split.reverse .split-visual { order: 0; }
