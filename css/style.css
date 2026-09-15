@@ -1025,14 +1025,6 @@ h1, h2, h3, h4 {
   padding: 4px 14px;
   border-radius: 999px;
 }
-.network-card .ic-round {
-  width: 82px; height: 82px;
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
-  background: var(--green-light);
-}
-.network-card .ic-round svg { width: 54px; height: 54px; }
 
 /* Bandeau « Les P'tits Nuages » ------------------------------------------ */
 .sister {

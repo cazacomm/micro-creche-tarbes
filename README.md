@@ -122,15 +122,16 @@ crèche le 12/09/2026. Il reste :
 À déposer dans `assets/images/` — les pages pointent déjà vers ces noms de fichiers et affichent
 une icône de repli tant qu'ils sont absents :
 
-Restent à fournir — **photos réelles du lieu**, à faire une fois les travaux terminés :
+Restent à fournir — **photos réelles du lieu** :
 
-- `accueil-hero.jpg` — visuel principal de la page d'accueil (carré, ~1000×1000 px)
 - `espace-de-vie.jpg` — vue d'ensemble de la crèche (paysage, ~1200×900 px)
 - `salle-de-jeux.jpg` — la grande salle de jeux (paysage, ~1200×900 px)
 
 Déjà en place :
 
+- ✅ `accueil-hero.jpg` — **vraie photo de la salle de vie**, recadrée en carré 1000×1000
 - ✅ `directrice.jpg` — portrait de Loane, recadré en carré 800×800
+- ✅ `logo-pyrenees-ibos.png` — logo de la Micro-crèche Pyrénées, détouré en rond 500×500
 - ✅ `vie-1.jpg` … `vie-8.jpg` — galerie « La vie à la crèche », 800×800
 - ✅ `pedagogie.jpg` — visuel de la page Pédagogie, 1200×900
 
