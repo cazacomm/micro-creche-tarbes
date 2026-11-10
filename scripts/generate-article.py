@@ -150,7 +150,9 @@ def inline(text: str) -> str:
     interne reste possible, un lien externe devient structurellement impossible."""
     out = esc(text)
     out = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", out)
-    out = re.sub(r"\[([^\]]+)\]\((/[^)\s]*)\)", r'<a href="\2">\1</a>', out)
+    # Le site utilise des chemins relatifs partout : un article vit à
+    # /blog/<slug>/, d'où le préfixe « ../.. ».
+    out = re.sub(r"\[([^\]]+)\]\((/[^)\s]*)\)", r'<a href="../..\2">\1</a>', out)
     return out
 
 
@@ -1106,8 +1108,11 @@ def hero_subtitle(data: dict) -> str:
 
 def build_main(parts: dict, cfg: dict, data: dict, today: dict) -> str:
     """Le <main> complet, aux conventions de ce site : hero repris du gabarit
-    (SVG décoratifs intacts), puis la section de contenu — fil d'ariane, ligne
-    de date, <article class="post-body">, FAQ en .faq-item et retour au blog."""
+    (SVG décoratifs intacts), puis la section de contenu (.bg-cream,
+    .container.narrow) — fil d'ariane en chemins relatifs, ligne de date,
+    <article class="post-body"> contenant la FAQ en .faq-item, puis le retour
+    au blog. Mêmes classes que l'article de référence : aucune classe du site
+    du Jardin, absente de ce CSS."""
     reading = max(3, round(content_word_count(data) / 200))
 
     hero = parts["hero"]
@@ -1124,10 +1129,10 @@ def build_main(parts: dict, cfg: dict, data: dict, today: dict) -> str:
         for s in data["sections"])
 
     faq = "\n\n".join(
-        f'        <div class="faq-item">\n'
-        f'          <h3>{inline(q["question"])}</h3>\n'
-        f'          <p>{inline(q["answer"])}</p>\n'
-        f'        </div>'
+        f'          <div class="faq-item">\n'
+        f'            <h3>{inline(q["question"])}</h3>\n'
+        f'            <p>{inline(q["answer"])}</p>\n'
+        f'          </div>'
         for q in data["faq"])
 
     back = f"\n\n        {parts['post_back']}" if parts["post_back"] else ""
@@ -1137,16 +1142,17 @@ def build_main(parts: dict, cfg: dict, data: dict, today: dict) -> str:
     {hero}
 
     <!-- ================== ARTICLE ================== -->
-    <section class="section bg-clear">
-      <div class="container max-w-4xl">
+    <section class="section bg-cream">
+      <div class="container narrow">
 
         <nav class="blog-breadcrumb" aria-label="Fil d'ariane">
-          <a href="/index.html">Accueil</a> <span>›</span> <a href="/blog/">Blog</a> <span>›</span> {inline(data['breadcrumb'])}
+          <a href="../../index.html">Accueil</a> <span>›</span>
+          <a href="../../blog/">Blog</a> <span>›</span> {inline(data['breadcrumb'])}
         </nav>
 
-        <p class="post-meta-line">
-          Publié le <time datetime="{today['iso']}">{today['fr']}</time> · {esc(cfg['site_name'])} · Lecture {reading} min
-        </p>
+        <div class="post-meta-line">
+          Publié le <time datetime="{today['iso']}">{today['fr']}</time> · Lecture {reading} min · {esc(cfg['default_article_section'])}
+        </div>
 
         <article class="post-body">
 
@@ -1154,12 +1160,11 @@ def build_main(parts: dict, cfg: dict, data: dict, today: dict) -> str:
 
 {body}
 
-        </article>
+          <h2>Questions fréquentes</h2>
 
-        <!-- ================== FAQ ================== -->
-        <h2 class="title-green mt-14">Questions fréquentes des parents</h2>
+{faq}
 
-{faq}{back}
+        </article>{back}
 
       </div>
     </section>
@@ -1235,8 +1240,10 @@ def update_blog_index(cfg: dict, topic: dict, meta: dict, today: dict) -> str:
     """Ajoute la carte de l'article en tête de la grille de blog/index.html,
     au format .post-card de ce site (lien enveloppant, tag, h3, méta, extrait)."""
     html = BLOG_INDEX.read_text(encoding="utf-8")
-    url = f"/blog/{topic['slug']}/"
-    if url in html:
+    # Les cartes de ce site pointent en relatif (« <slug>/ ») ; on reconnaît
+    # aussi l'écriture absolue pour rester idempotent.
+    url = f"{topic['slug']}/"
+    if f'href="{url}"' in html or f'href="/blog/{url}"' in html:
         log("blog/index.html contient déjà cet article : pas de doublon ajouté.")
         return html
 
@@ -1256,7 +1263,7 @@ def update_blog_index(cfg: dict, topic: dict, meta: dict, today: dict) -> str:
             <span class="card-cta">Lire l'article <i class="fa-solid fa-arrow-right"></i></span>
           </a>
 """
-    anchor = '<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">'
+    anchor = '<div class="post-grid reveal">'
     if anchor not in html:
         raise ValueError("Point d'insertion de la grille introuvable dans blog/index.html")
     return html.replace(anchor, anchor + card, 1)
@@ -1350,7 +1357,7 @@ def refresh_entries(cfg: dict, topic: dict, meta: dict) -> list[str]:
         teaser = teaser[:257].rsplit(" ", 1)[0] + "…"
 
     html = BLOG_INDEX.read_text(encoding="utf-8")
-    card = re.search(r'<a href="/blog/' + re.escape(slug)
+    card = re.search(r'<a href="(?:/blog/)?' + re.escape(slug)
                      + r'/" class="post-card">(?:(?!</a>).)*?</a>', html, re.S)
     if card:
         new_card = re.sub(r'(<p class="post-excerpt">)[^<]*',
