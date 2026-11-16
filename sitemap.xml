@@ -38,7 +38,7 @@
   </url>
   <url>
     <loc>https://www.micro-creche-tarbes.fr/blog/</loc>
-    <lastmod>2026-11-10</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -51,6 +51,12 @@
   <url>
     <loc>https://www.micro-creche-tarbes.fr/blog/deroule-journee-type-micro-creche-7h30-18h30/</loc>
     <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.micro-creche-tarbes.fr/blog/adaptation-micro-creche-preparer-premiers-jours/</loc>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
