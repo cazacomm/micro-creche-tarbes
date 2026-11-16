@@ -100,7 +100,7 @@ crèche le 12/09/2026. Il reste :
 > Captures d'origine : `assets/sources/avis/`.
 
 > ✅ **Réseaux sociaux** : la crèche n'a **pas de page Facebook**. Un seul compte Instagram
-> (`@microcreches.despyrenees`) couvre toutes les crèches du réseau — c'est le même que celui du
+> (`@microcreches65`) couvre toutes les crèches du réseau — c'est le même que celui du
 > Jardin des Merveilles. Ne pas ajouter d'autre lien social.
 
 > ✅ **Capacité** : **12 places par micro-crèche** — 12 pour Les P'tits Soleils, 12 pour Les
